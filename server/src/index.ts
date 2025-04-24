@@ -218,8 +218,9 @@ app.get("/config", (req, res) => {
 });
 
 const PORT = process.env.PORT || 6277;
+const PROXYHOST = process.env.PROXYHOST || "127.0.0.1";
 
-const server = app.listen(PORT);
+const server = app.listen(PORT, PROXYHOST);
 server.on("listening", () => {
   console.log(`⚙️ Proxy server listening on port ${PORT}`);
 });
